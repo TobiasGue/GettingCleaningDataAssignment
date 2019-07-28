@@ -43,6 +43,6 @@ run_analysis <- function(){
   library(data.table)
   dataDT <- data.table(data)
   calc_data <- dataDT[, lapply(.SD, mean), by=c("subjectId", "activities")]
-  write.table(calc_data, "tidy_calc.txt")
+  write.table(calc_data, "tidy_calc.txt", row.names = FALSE)
   
 }
